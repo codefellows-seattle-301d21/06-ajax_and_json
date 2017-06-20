@@ -47,7 +47,7 @@ Article.loadAll = function(rawData) {
 // and process it, then hand off control to the View.
 Article.fetchAll = function() {
   if (localStorage.rawData) {
-    
+      Article.loadAll(JSON.parse(localStorage.rawData));
   } else {
     $.getJSON('data/hackerIpsum.json')
     .then(function(data){
